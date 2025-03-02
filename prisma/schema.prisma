@@ -1,0 +1,23 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Product {
+  // Para usar ObjectId de MongoDB, Prisma requiere que la ID sea un String con @db.ObjectId
+  id                  String   @id @default(auto()) @map("_id") @db.ObjectId
+  nombre              String
+  descripcion         String
+  precio              Float
+  descuento           Boolean  @default(false)
+  porcentajeDescuento Float?   // Opcional
+  imagenUrl           String
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
