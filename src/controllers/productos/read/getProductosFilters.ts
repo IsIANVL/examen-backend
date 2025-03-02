@@ -20,7 +20,7 @@ import { db } from "../../../lib/db";
  * - sortBy: "precio" | "createdAt" (u otro campo) -> campo para ordenar
  * - sortOrder: "asc" | "desc" -> orden ascendente/descendente
  */
-export const getProductosConFiltrosBody = asyncHandler(
+export const getProductosFilters = asyncHandler(
   async (req: Request, res: Response) => {
     // Desestructuramos los campos del body
     const { descuento, priceMin, priceMax, sortBy, sortOrder } = req.body;

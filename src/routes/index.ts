@@ -6,7 +6,6 @@ import { createProducto } from "../controllers/productos/create/createProducto";
 /** READ */
 import { getProductos } from "../controllers/productos/read/getProductos";
 import { getProductoById } from "../controllers/productos/read/getProductoById";
-import { getProductosFilters } from "../controllers/productos/read/getProductosFilters";
 
 
 /** UPDATE */
@@ -14,6 +13,7 @@ import { updateProducto } from "../controllers/productos/update/updateProducto";
 
 /** DELETE */
 import { deleteProducto } from "../controllers/productos/delete/deleteProducto";
+import { getProductosFilters } from "../controllers/productos/read/getProductosFilters";
 
 
 const router = Router();
