@@ -1,16 +1,22 @@
-import express from "express";
-import cors from "cors";
-import routes from "./routes";
+import express from 'express';
+import morgan from 'morgan';
+import http from 'http';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import router from './routes';
 
 const app = express();
+const PORT = 4000;
 
-// Habilita CORS con configuraciones por defecto
+const server = http.createServer(app);
+
+app.use(morgan('dev'));
 app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(router);
 
-// Middleware para parsear JSON
-app.use(express.json());
+server.listen(PORT, () => {
+  console.log(`Servidor arriba en el puerto ${PORT}`);
+});
 
-// Tus rutas
-app.use("/api", routes);
-
-export default app;
