@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 import router from './routes';
 
 const app = express();
-const PORT = 4000;
+const PORT = 3000;
 
 const server = http.createServer(app);
 
