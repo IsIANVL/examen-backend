@@ -12,7 +12,7 @@ export const updateProducto = asyncHandler(async (req: Request, res: Response) =
      return;
   }
 
-  // Desestructuramos los campos que podríamos actualizar
+  // Desestructuramos los campos que podríamos actualiza
   const {
     nombre,
     descripcion,
@@ -22,7 +22,7 @@ export const updateProducto = asyncHandler(async (req: Request, res: Response) =
     imagenUrl,
   } = req.body;
 
-  // Creamos un objeto "dataToUpdate" solo con los campos definidos
+  // Creamos un objeto "dataToUpdate" solo con los campos definido
   const dataToUpdate: Record<string, any> = {};
 
   if (nombre !== undefined) dataToUpdate.nombre = nombre;
